@@ -1,0 +1,99 @@
+@import 'variables';
+
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+
+  .search-input {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid $primary-color;
+    border-radius: 25px;
+    outline: none;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      border-color: $accent-color;
+    }
+  }
+
+  .loading-spinner {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $primary-color;
+  }
+
+  .search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 1000;
+
+    .search-result-item {
+      padding: 12px 20px;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: 0.2fr 1fr 0.5fr;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid $border-color;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background-color: $hover-color;
+      }
+
+      .recipe-id {
+        color: rgb(58, 49, 1);
+        font-weight: 1200;
+      }
+
+      .recipe-id:hover {
+        color: #f6cfb7;
+      }
+
+      .recipe-name {
+        color: #35059c;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      .recipe-name:hover {
+        color: #36011b;
+      }
+
+      .recipe-cuisine {
+        color: $text-secondary;
+        font-size: 14px;
+        margin-left: auto;
+      }
+
+      .recipe-cuisine:hover {
+        color: #bbb7f6;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .search-container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
