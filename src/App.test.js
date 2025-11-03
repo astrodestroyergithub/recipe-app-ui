@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { MemoryRouter } from 'react-router-dom';
 import { configureStore } from '@reduxjs/toolkit';
 import App from './App.jsx';
 import recipeReducer from './store/recipeSlice';
